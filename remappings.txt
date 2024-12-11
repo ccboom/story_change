@@ -1,0 +1,3 @@
+@storyprotocol/core/=/contracts/contracts/
+@storyprotocol/periphery/=/contracts/
+forge-std/=lib/forge-std/src/

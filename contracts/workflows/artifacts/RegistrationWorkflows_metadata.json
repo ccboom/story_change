@@ -1,0 +1,1260 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "accessController",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "coreMetadataModule",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ipAssetRegistry",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "licenseRegistry",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "licensingModule",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "pilTemplate",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "authority",
+						"type": "address"
+					}
+				],
+				"name": "AccessManagedInvalidAuthority",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint32",
+						"name": "delay",
+						"type": "uint32"
+					}
+				],
+				"name": "AccessManagedRequiredDelay",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "AccessManagedUnauthorized",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					}
+				],
+				"name": "AddressEmptyCode",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "ERC1967InvalidImplementation",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ERC1967NonPayable",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FailedInnerCall",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidInitialization",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotInitializing",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "RegistrationWorkflows__ZeroAddressParam",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UUPSUnauthorizedCallContext",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "slot",
+						"type": "bytes32"
+					}
+				],
+				"name": "UUPSUnsupportedProxiableUUID",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "Workflow__CallerNotAuthorizedToMint",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "authority",
+						"type": "address"
+					}
+				],
+				"name": "AuthorityUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spgNftContract",
+						"type": "address"
+					}
+				],
+				"name": "CollectionCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "version",
+						"type": "uint64"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "Upgraded",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "ACCESS_CONTROLLER",
+				"outputs": [
+					{
+						"internalType": "contract IAccessController",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "CORE_METADATA_MODULE",
+				"outputs": [
+					{
+						"internalType": "contract ICoreMetadataModule",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "IP_ASSET_REGISTRY",
+				"outputs": [
+					{
+						"internalType": "contract IIPAssetRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "LICENSE_REGISTRY",
+				"outputs": [
+					{
+						"internalType": "contract ILicenseRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "LICENSING_MODULE",
+				"outputs": [
+					{
+						"internalType": "contract ILicensingModule",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PIL_TEMPLATE",
+				"outputs": [
+					{
+						"internalType": "contract IPILicenseTemplate",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "UPGRADE_INTERFACE_VERSION",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "authority",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "symbol",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "baseURI",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "contractURI",
+								"type": "string"
+							},
+							{
+								"internalType": "uint32",
+								"name": "maxSupply",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "mintFee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "mintFeeToken",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "mintFeeRecipient",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "mintOpen",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPublicMinting",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ISPGNFT.InitParams",
+						"name": "spgNftInitParams",
+						"type": "tuple"
+					}
+				],
+				"name": "createCollection",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "spgNftContract",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "accessManager",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isConsumingScheduledOp",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spgNftContract",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "ipMetadataURI",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "ipMetadataHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "string",
+								"name": "nftMetadataURI",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "nftMetadataHash",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct WorkflowStructs.IPMetadata",
+						"name": "ipMetadata",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bool",
+						"name": "allowDuplicates",
+						"type": "bool"
+					}
+				],
+				"name": "mintAndRegisterIp",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "ipId",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "data",
+						"type": "bytes[]"
+					}
+				],
+				"name": "multicall",
+				"outputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "results",
+						"type": "bytes[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proxiableUUID",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "nftContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "ipMetadataURI",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "ipMetadataHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "string",
+								"name": "nftMetadataURI",
+								"type": "string"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "nftMetadataHash",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct WorkflowStructs.IPMetadata",
+						"name": "ipMetadata",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "signer",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "signature",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct WorkflowStructs.SignatureData",
+						"name": "sigMetadata",
+						"type": "tuple"
+					}
+				],
+				"name": "registerIp",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "ipId",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newAuthority",
+						"type": "address"
+					}
+				],
+				"name": "setAuthority",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newNftContractBeacon",
+						"type": "address"
+					}
+				],
+				"name": "setNftContractBeacon",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newNftContract",
+						"type": "address"
+					}
+				],
+				"name": "upgradeCollections",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newImplementation",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "upgradeToAndCall",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"AddressEmptyCode(address)": [
+					{
+						"details": "There's no code at `target` (it is not a contract)."
+					}
+				],
+				"ERC1967InvalidImplementation(address)": [
+					{
+						"details": "The `implementation` of the proxy is invalid."
+					}
+				],
+				"ERC1967NonPayable()": [
+					{
+						"details": "An upgrade function sees `msg.value > 0` that may be lost."
+					}
+				],
+				"FailedInnerCall()": [
+					{
+						"details": "A call to an address target failed. The target may have reverted."
+					}
+				],
+				"InvalidInitialization()": [
+					{
+						"details": "The contract is already initialized."
+					}
+				],
+				"NotInitializing()": [
+					{
+						"details": "The contract is not initializing."
+					}
+				],
+				"UUPSUnauthorizedCallContext()": [
+					{
+						"details": "The call is from an unauthorized context."
+					}
+				],
+				"UUPSUnsupportedProxiableUUID(bytes32)": [
+					{
+						"details": "The storage `slot` is unsupported as a UUID."
+					}
+				]
+			},
+			"events": {
+				"AuthorityUpdated(address)": {
+					"details": "Authority that manages this contract was updated."
+				},
+				"CollectionCreated(address)": {
+					"params": {
+						"spgNftContract": "The address of the SPGNFT collection."
+					}
+				},
+				"Initialized(uint64)": {
+					"details": "Triggered when the contract has been initialized or reinitialized."
+				},
+				"Upgraded(address)": {
+					"details": "Emitted when the implementation is upgraded."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"authority()": {
+					"details": "Returns the current authority."
+				},
+				"constructor": {
+					"custom:oz-upgrades-unsafe-allow": "constructor"
+				},
+				"createCollection((string,string,string,string,uint32,uint256,address,address,address,bool,bool))": {
+					"params": {
+						"spgNftInitParams": "The initialization parameters for the SPGNFT collection. See {ISPGNFT-InitParams}."
+					},
+					"returns": {
+						"spgNftContract": "The address of the newly created SPGNFT collection."
+					}
+				},
+				"initialize(address)": {
+					"details": "Initializes the contract.",
+					"params": {
+						"accessManager": "The address of the protocol access manager."
+					}
+				},
+				"isConsumingScheduledOp()": {
+					"details": "Returns true only in the context of a delayed restricted call, at the moment that the scheduled operation is being consumed. Prevents denial of service for delayed restricted calls in the case that the contract performs attacker controlled calls."
+				},
+				"mintAndRegisterIp(address,address,(string,bytes32,string,bytes32),bool)": {
+					"details": "Requires caller to have the minter role or the SPG NFT to allow public minting.",
+					"params": {
+						"allowDuplicates": "Set to true to allow minting an NFT with a duplicate metadata hash.",
+						"ipMetadata": "OPTIONAL. The desired metadata for the newly minted NFT and registered IP.",
+						"recipient": "The address of the recipient of the minted NFT.",
+						"spgNftContract": "The address of the SPGNFT collection."
+					},
+					"returns": {
+						"ipId": "The ID of the registered IP.",
+						"tokenId": "The ID of the newly minted NFT."
+					}
+				},
+				"multicall(bytes[])": {
+					"custom:oz-upgrades-unsafe-allow-reachable": "delegatecall",
+					"details": "Receives and executes a batch of function calls on this contract."
+				},
+				"proxiableUUID()": {
+					"details": "Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier."
+				},
+				"registerIp(address,uint256,(string,bytes32,string,bytes32),(address,uint256,bytes))": {
+					"params": {
+						"ipMetadata": "OPTIONAL. The desired metadata for the newly registered IP.",
+						"nftContract": "The address of the NFT collection.",
+						"sigMetadata": "OPTIONAL. Signature data for setAll (metadata) for the IP via the Core Metadata Module.",
+						"tokenId": "The ID of the NFT."
+					},
+					"returns": {
+						"ipId": "The ID of the newly registered IP."
+					}
+				},
+				"setAuthority(address)": {
+					"details": "Transfers control to a new authority. The caller must be the current authority."
+				},
+				"setNftContractBeacon(address)": {
+					"details": "Sets the NFT contract beacon address.",
+					"params": {
+						"newNftContractBeacon": "The address of the new NFT contract beacon."
+					}
+				},
+				"upgradeCollections(address)": {
+					"details": "Upgrades the NFT contract beacon. Restricted to only the protocol access manager.",
+					"params": {
+						"newNftContract": "The address of the new NFT contract implemenetation."
+					}
+				},
+				"upgradeToAndCall(address,bytes)": {
+					"custom:oz-upgrades-unsafe-allow-reachable": "delegatecall",
+					"details": "Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+				}
+			},
+			"title": "IP Registration Workflows",
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"RegistrationWorkflows__ZeroAddressParam()": [
+					{
+						"notice": "Zero address provided as a param to the RegistrationWorkflows."
+					}
+				],
+				"Workflow__CallerNotAuthorizedToMint()": [
+					{
+						"notice": "Caller is not authorized to mint."
+					}
+				]
+			},
+			"events": {
+				"CollectionCreated(address)": {
+					"notice": "Event emitted when a new NFT collection is created."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"ACCESS_CONTROLLER()": {
+					"notice": "The address of the Access Controller."
+				},
+				"CORE_METADATA_MODULE()": {
+					"notice": "The address of the Core Metadata Module."
+				},
+				"IP_ASSET_REGISTRY()": {
+					"notice": "The address of the IP Asset Registry."
+				},
+				"LICENSE_REGISTRY()": {
+					"notice": "The address of the License Registry."
+				},
+				"LICENSING_MODULE()": {
+					"notice": "The address of the Licensing Module."
+				},
+				"PIL_TEMPLATE()": {
+					"notice": "The address of the PIL License Template."
+				},
+				"createCollection((string,string,string,string,uint32,uint256,address,address,address,bool,bool))": {
+					"notice": "Creates a new SPGNFT collection to be used by SPG."
+				},
+				"mintAndRegisterIp(address,address,(string,bytes32,string,bytes32),bool)": {
+					"notice": "Mint an NFT from a SPGNFT collection and register it with metadata as an IP."
+				},
+				"registerIp(address,uint256,(string,bytes32,string,bytes32),(address,uint256,bytes))": {
+					"notice": "Registers an NFT as IP with metadata."
+				}
+			},
+			"notice": "Each workflow bundles multiple core protocol operations into a single function to simplify the IP registration process in the Story Proof-of-Creativity Protocol.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/workflows/RegistrationWorkflows.sol": "RegistrationWorkflows"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": [
+			":@storyprotocol/core/=/contracts/contracts/",
+			":@storyprotocol/periphery/=/contracts/",
+			":forge-std/=lib/forge-std/src/"
+		]
+	},
+	"sources": {
+		"/contracts/contracts/interfaces/IIPAccount.sol": {
+			"keccak256": "0x792db72e22e20af2122b5d6915d7e2d1b58901626469be2ad9eff822ea1f7853",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://ba24de53704ffb85e412d91b507d37d1613c5d558d964b15159e3c370fffa368",
+				"dweb:/ipfs/QmXnDrroZpbnspYrLszvtGSAGcTQ7FoiryBTCQuSv8NuQ5"
+			]
+		},
+		"/contracts/contracts/interfaces/IIPAccountStorage.sol": {
+			"keccak256": "0x660f3c2741daddb8afaa681816f637521acb02432dd71aa26b64380a3a2183f0",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://fc0554d596b99ddb3124157db5bde166859238dfc1407c12602f7ed59ce04d7a",
+				"dweb:/ipfs/QmPFCSfGvD2dRA72qfpYYV8xyPwwNteSuijSJv5tVFHuFe"
+			]
+		},
+		"/contracts/contracts/interfaces/access/IAccessController.sol": {
+			"keccak256": "0xa0e54b5b56b010121b3a8da539b1bcff1ce2b3860802fb4fb0e3a41faab84029",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://fa8fda631272e7aaffe3150135f25693d150177ee9ee85eb0bc8b3b50f7fe0fb",
+				"dweb:/ipfs/QmUskSRJ4453dt1G8vzBiTd1sByqMmAfSeRX7zAGHHvvKh"
+			]
+		},
+		"/contracts/contracts/interfaces/modules/base/IModule.sol": {
+			"keccak256": "0xe6b5a6812eeaf90aab7c016aaa8d3efdccedc95059badc40cca5eb23f0f16c50",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://ddb19461c0a36090307660badc772eaf6d3cfbad44d82b6bd47d810aaaf4c12c",
+				"dweb:/ipfs/QmeTeb8xya718vYAQA8Cb5zRRMzGuLbT5HVP95sv34bMkE"
+			]
+		},
+		"/contracts/contracts/interfaces/modules/licensing/ILicenseTemplate.sol": {
+			"keccak256": "0xf8b71c381040358603bcc20002b7a89b1da55d213e9acf5ac1c592ab6cb38b85",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://6ce9f7004d68b94ab59d77fcc47c78d4bde3a3813d76525b63e28a155d69b157",
+				"dweb:/ipfs/Qmbg8VDrRT1nRqBkjiZF4RqSG7vKEBq4mJ5AMEanFfPo2j"
+			]
+		},
+		"/contracts/contracts/interfaces/modules/licensing/ILicensingModule.sol": {
+			"keccak256": "0xc9ab54441eb62ac9fdf9b8eef3688d714d5be971c5d8be5730db317088d5d41e",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://f2f2b7073f265caabf2fda7755820876e83561628639ffbb24a081eec9599e4a",
+				"dweb:/ipfs/QmYfUW65nN2tqjiFPtBM8D37pjbeG2jQw37iemPeaSWMzV"
+			]
+		},
+		"/contracts/contracts/interfaces/modules/licensing/IPILicenseTemplate.sol": {
+			"keccak256": "0x17249bb6a3ce59ec978552c55cf5a5b387012cec5f51d78916a52c4e96d7765a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://98a866063bac0bdca34ab4e4ebe1014b5b88d9c6140908da2442539820ea53a0",
+				"dweb:/ipfs/QmdfycqUzwQpzqUwqS6MC9XbxZxg3wjX4ZTrRUgjKgSPU1"
+			]
+		},
+		"/contracts/contracts/interfaces/modules/metadata/ICoreMetadataModule.sol": {
+			"keccak256": "0x4eb25795179c8f1391ce1b2886bb571b305aab0ea10078f5c9256bfa8f80c5f0",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://c0309d66742375e5a340b6af61e8a4b90a67c4728f0677f35513f53fbc7087c8",
+				"dweb:/ipfs/QmWfEdYKLthFwZVNM8H8zjY2VMn26wcw1ZnZRYhEoTZu1G"
+			]
+		},
+		"/contracts/contracts/interfaces/registries/IIPAccountRegistry.sol": {
+			"keccak256": "0x95195a5f64a82cd8c9e72477edb6e5f2e2c51ccece6d56d68d48f09a7b861d6a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://2be79d745f02f73379997d437b790d858ea29c97102ffcd5ee7f10b6d42b67a2",
+				"dweb:/ipfs/QmYR5EbYNDkdkoECSg963Cat9eYoh5Ed7jemZoevbfRoXW"
+			]
+		},
+		"/contracts/contracts/interfaces/registries/IIPAssetRegistry.sol": {
+			"keccak256": "0xd7b55fdbe0ab5240687a2abd333cd5f738ee1870733d30f4f4b9a30bf6dfd1d1",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://017d941f8137f32a1ccc1bbaf70e132f4a683df6d8f316cc0fae7deed729a798",
+				"dweb:/ipfs/QmP2uKkBnDxbtgXVyYY7jUqxhGf7dJS3S4X86VBBuShE9g"
+			]
+		},
+		"/contracts/contracts/interfaces/registries/ILicenseRegistry.sol": {
+			"keccak256": "0xcde1ffb25195a006abea2bc05823a0544cd88113e549fd2bd0490b0b2d0447ff",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://cfdb78a782a03b10fc4454ceec6830e3aa8351e385af2e3a2c41f614c4159080",
+				"dweb:/ipfs/Qmev9EGYcNXX6QFtqp6sAC1Xq88x3cS6vTG6fDJymnb4u6"
+			]
+		},
+		"/contracts/contracts/lib/AccessPermission.sol": {
+			"keccak256": "0x8892762edeb3b50eddcd0787edbdf414c4b569c7bf9d90ce487b00c74fcf4c75",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://06ca969f103c274976ecf1031b6ee2c6004961efeb17dc2704fd174d37b9f62f",
+				"dweb:/ipfs/QmTynwmu4kMiDi35dsKL8KPjEdoKsvedsjJszqE7KF5pSK"
+			]
+		},
+		"/contracts/contracts/lib/Licensing.sol": {
+			"keccak256": "0xab5339d6fe04dcb1642f9a1558da9264017c3c87e8bb49fe3493d76ad04a2346",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://d79b0d47a3afaf05bd4f4a3ef03dafcee06bd058bce91a50872c263b09938ced",
+				"dweb:/ipfs/QmU2dPALX3EsCY1KR9RUHX2BQowKxfmHcWrbGMy8mHt6zy"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/access/manager/AccessManagedUpgradeable.sol": {
+			"keccak256": "0xd7e800ed57cb2dc4ce3d38fc310cf6c4918c0a67f9071ef8fb3e0cff24be6446",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f85f4baeccce8f93fdc5d4ce54178c900d29f67e3109fe1b31b9d98e3f0a454",
+				"dweb:/ipfs/QmWfRZZzkBi3Eo4ub9VRLkBx8w527Qs5ceTNLQ9unx9n7g"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609",
+				"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol": {
+			"keccak256": "0x3f13b947637c4969c0644cab4ef399cdc4b67f101463b8775c5a43b118558e53",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c6683e6ade6985d394d32baaef5eea0d8b9ff0b3eca86ae413d6cdde114a9930",
+				"dweb:/ipfs/QmdBE8T1BTddZxpdECMsb3KiCFyjNWmxcCddYrWFTXmWPj"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9",
+				"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/MulticallUpgradeable.sol": {
+			"keccak256": "0x1545b1796f0b94f811d95b8b208c0668dacfc7768247d22b63161a47c4c5ef4e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a1dccf7856b960b2ed7565906b457812ad8d29a15d403f17702ac7e090680300",
+				"dweb:/ipfs/QmUqqibiekFv84mdq7zeyRF56mLJbFyFUxWKTrz8Twzkpn"
+			]
+		},
+		"@openzeppelin/contracts/access/IAccessControl.sol": {
+			"keccak256": "0xb6b36edd6a2999fd243ff226d6cbf84bd71af2432bbd0dfe19392996a1d9cb41",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1fd2f35495652e57e3f99bc6c510bc5f7dd398a176ea2e72d8ed730aebc6ca26",
+				"dweb:/ipfs/QmTQV6X4gkikTib49cho5iDX3JvSQbdsoEChoDwrk3CbbH"
+			]
+		},
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/AuthorityUtils.sol": {
+			"keccak256": "0xb3875997b0d8705e29aa20fee88e1dfef93df438794ae1ad8ba2eb016a4dd4e4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f9e50192f7c7a22829cacfbd14221c3a3d869da64a2333f330d527777f275d9e",
+				"dweb:/ipfs/QmaxMQb26ggDmW3SDwJ8y6hRC8dbWbLMpUZBVzZtXqzycJ"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/IAccessManaged.sol": {
+			"keccak256": "0xaba93d42cd70e1418782951132d97b31ddce5f50ad81090884b6d0e41caac9d6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b110886f83e3e98a11255a3b56790322e8d83e513304dde71299406685fc6694",
+				"dweb:/ipfs/QmPwroS7MUUk1EmsvaJqU6aarhQ8ewJtJMg7xxmTsaxZEv"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/IAccessManager.sol": {
+			"keccak256": "0xdabf85e3bab52e7cfade4f77e661bcf7a2f9f95097bfd2ca5ddb193a0c21ee8b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://402259332090488a587a858ec0113bc7fe55e9dbc6e329927b87ed0f1cce7d08",
+				"dweb:/ipfs/QmPJufTJJJifny3JscKTASsPzCrpXRbhtsJnwkCdbaKDTf"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/IAuthority.sol": {
+			"keccak256": "0x4cc0766bd7fb7b3bafb70afa2a93b6e313a0baec7a35ad1b57505be7861c1030",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://85871c47ac00d10664b858ef71ecd8b9787c1d313e544ab2c57210c520a3c06c",
+				"dweb:/ipfs/QmUMTwojLzURuHftQLzAVuDmib9roj4KwcHCkg3LhZ2AdH"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/IERC165.sol": {
+			"keccak256": "0xde7e9fd9aee8d4f40772f96bb3b58836cbc6dfc0227014a061947f8821ea9724",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://11fea9f8bc98949ac6709f0c1699db7430d2948137aa94d5a9e95a91f61a710a",
+				"dweb:/ipfs/QmQdfRXxQjwP6yn3DVo1GHPpriKNcFghSPi94Z1oKEFUNS"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/draft-IERC1822.sol": {
+			"keccak256": "0x2a1f9944df2015c081d89cd41ba22ffaf10aa6285969f0dc612b235cc448999c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef381843676aec64421200ee85eaa0b1356a35f28b9fc67e746a6bbb832077d9",
+				"dweb:/ipfs/QmY8aorMYA2TeTCnu6ejDjzb4rW4t7TCtW4GZ6LoxTFm7v"
+			]
+		},
+		"@openzeppelin/contracts/proxy/ERC1967/ERC1967Utils.sol": {
+			"keccak256": "0x06a78f9b3ee3e6d0eb4e4cd635ba49960bea34cac1db8c0a27c75f2319f1fd65",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://547d21aa17f4f3f1a1a7edf7167beff8dd9496a0348d5588f15cc8a4b29d052a",
+				"dweb:/ipfs/QmT16JtRQSWNpLo9W23jr6CzaMuTAcQcjJJcdRd8HLJ6cE"
+			]
+		},
+		"@openzeppelin/contracts/proxy/Proxy.sol": {
+			"keccak256": "0xc3f2ec76a3de8ed7a7007c46166f5550c72c7709e3fc7e8bb3111a7191cdedbd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e73efb4c2ca655882dc237c6b4f234a9bd36d97159d8fcaa837eb01171f726ac",
+				"dweb:/ipfs/QmTNnnv7Gu5fs5G1ZMh7Fexp8N4XUs3XrNAngjcxgiss3e"
+			]
+		},
+		"@openzeppelin/contracts/proxy/beacon/BeaconProxy.sol": {
+			"keccak256": "0x387ebdcb365b8e620f26645d2b34a161cd39eedfb0219e8baff55630c5ae113c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://744ea187c195e31cb9201e63ca291fca9e623747f54f0ba390b366a6213b8964",
+				"dweb:/ipfs/Qmc547qfV4sz65DC9B4okx1HvgxwUzJR7zTfKKbTzL3UQT"
+			]
+		},
+		"@openzeppelin/contracts/proxy/beacon/IBeacon.sol": {
+			"keccak256": "0xc59a78b07b44b2cf2e8ab4175fca91e8eca1eee2df7357b8d2a8833e5ea1f64c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5aa4f07e65444784c29cd7bfcc2341b34381e4e5b5da9f0c5bd00d7f430e66fa",
+				"dweb:/ipfs/QmWRMh4Q9DpaU9GvsiXmDdoNYMyyece9if7hnfLz7uqzWM"
+			]
+		},
+		"@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol": {
+			"keccak256": "0x5920bac7215d12961e23b207f6e81a1d64aa4935a4469abe95b64a96a3c3007b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b34bb828c45c3a4ebf6c2c585971abf5089e61357a3818a2900c7e85b74a1299",
+				"dweb:/ipfs/QmewGAzKsPXYfSjCKxuH1SekKxtdyzhdbdyxjF5gohLigt"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x5ef46daa3b58ef2702279d514780316efaa952915ee1aa3396f041ee2982b0b4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f8f2a76e23b02fc69e8cd24c3cb47da6c7af3a2d6c3a382f8ac25c6e094ade7",
+				"dweb:/ipfs/QmPV4ZS4tPVv4mTCf9ejyZ1ai57EEibDRj7mN2ARDCLV5n"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+			"keccak256": "0x37d1aaaa5a2908a09e9dcf56a26ddf762ecf295afb5964695937344fc6802ce1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ed0bfc1b92153c5000e50f4021367b931bbe96372ac6facec3c4961b72053d02",
+				"dweb:/ipfs/Qmbwp8VDerjS5SV1quwHH1oMXxPQ93fzfLVqJ2RCqbowGE"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245",
+				"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"@openzeppelin/contracts/utils/StorageSlot.sol": {
+			"keccak256": "0x32ba59b4b7299237c8ba56319110989d7978a039faf754793064e967e5894418",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1ae50c8b562427df610cc4540c9bf104acca7ef8e2dcae567ae7e52272281e9c",
+				"dweb:/ipfs/QmTHiadFCSJUPpRjNegc5SahmeU8bAoY8i9Aq6tVscbcKR"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8",
+				"dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165Checker.sol": {
+			"keccak256": "0xac3d50e321a48a40b4496970ce725900f13aeb2255b7c1203f5adbe98c4a911a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1d7b235b578347dce2d831a76f122e820a7db7e73fd2e47f13bafdcd61c5b066",
+				"dweb:/ipfs/QmVAELwambfJa55HfiCoz1kFFh7iYwRYeW5x8si6AFM4iX"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df",
+				"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0x005ec64c6313f0555d59e278f9a7a5ab2db5bdc72a027f255a37c327af1ec02d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4ece9f0b9c8daca08c76b6b5405a6446b6f73b3a15fab7ff56e296cbd4a2c875",
+				"dweb:/ipfs/QmQyRpyPRL5SQuAgj6SHmbir3foX65FJjbVTTQrA2EFg6L"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeCast.sol": {
+			"keccak256": "0xe19a4d5f31d2861e7344e8e535e2feafb913d806d3e2b5fe7782741a2a7094fe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4aed79c0fa6f0546ed02f2f683e8f77f0fd2ed7eb34d8bbf3d373c9a6d95b13c",
+				"dweb:/ipfs/QmWqVz6UAVqmnWU5pqYPt1o6iDEZyPaBraAA3rKfTTSfYj"
+			]
+		},
+		"@openzeppelin/contracts/utils/types/Time.sol": {
+			"keccak256": "0xc7755af115020049e4140f224f9ee88d7e1799ffb0646f37bf0df24bf6213f58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7f09bf94d5274334ec021f61a04659db303f31e60460e14b709c9bf187740111",
+				"dweb:/ipfs/QmNvgomZYUwFAt4cZbPWAiTeSZQreGehY9BK5xyVJsUttb"
+			]
+		},
+		"contracts/BaseWorkflow.sol": {
+			"keccak256": "0xfc339cfdf79ad1c78f735d943987605b135e3fabaad0130f14e1dc2dd9f4ba1d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b1a2eab13b72e7baaa9c313968050f9bc5190bc67a1c7e88d390549c30c04f74",
+				"dweb:/ipfs/QmfVwLUnCmKgBzHGfDrPEewsPXS9jeV6CvRicadguPHZu5"
+			]
+		},
+		"contracts/interfaces/ISPGNFT.sol": {
+			"keccak256": "0x361f205dd25b5b40f3035139189cdb947677ff0cdffe03872db866af5d76cb55",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2c9bd9aa2bc63a16e9a764b21ed4f724b3fcc2b5cdc45ab09065bd6b0e4f3410",
+				"dweb:/ipfs/Qmcy4bvddxNzDSGS6yBhQwSboqAbqbwEjpEwhs8tWYL7tr"
+			]
+		},
+		"contracts/interfaces/story-nft/IERC7572.sol": {
+			"keccak256": "0x718d1640dd118f6ca81e1eb8cf72bf9471584f40871ebb53fdd5de2dd050454e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://99bc2317e8aeaaf7d6733d3eaaa55e33e91db62c67b20832d9db68ea6ea60404",
+				"dweb:/ipfs/QmNY2u8LZ2TjzmPaQz7hepkhfaDXb9x5xYrYdY9KaKza5c"
+			]
+		},
+		"contracts/interfaces/workflows/IRegistrationWorkflows.sol": {
+			"keccak256": "0x5aa7e009e77c2b25229be3a0bd6d453785db249b4de89db7f6da227c9a2e6a51",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e2720c3c43d78379128b705be05e29fbceb4f76f7d2f0e3ed41e4849bdbc50a",
+				"dweb:/ipfs/QmWZu99kBoCdpchWnD8S9BAqoPkb6LuevUsjBrDpqL571R"
+			]
+		},
+		"contracts/lib/Errors.sol": {
+			"keccak256": "0xbd613986fe3b2793b6cf3bdba195ac73068484bf3dbe089efa745670ee55a8e2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd2c8c74ea44d5e000f77508d65f1493a6be4920998016b3da0947185f2db7a9",
+				"dweb:/ipfs/QmNqN1XXbUv7XWPLqo2hetq6bUvjVoiTJRFQu9L9wkHUNZ"
+			]
+		},
+		"contracts/lib/MetadataHelper.sol": {
+			"keccak256": "0x7a05e834cd2293b4dfb9e042141a2c563b4c5840f310a7ed35eeab050f9e4df6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e22c1ed413b10d92d99505c09bb636f015b031803d02e6f05051e33304149c34",
+				"dweb:/ipfs/QmVf5T7eBqrv9bayRxL7EALWMtxWxQ5qpxkN1UL2LWVx2a"
+			]
+		},
+		"contracts/lib/PermissionHelper.sol": {
+			"keccak256": "0xa83df42d004f1d650cb8f2df3d0f82cdc49302448c8803a188eb38ab4cdb530c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5387a09714d780993360e6d828263506f6d870305a0a7f366f61891056a8f2d5",
+				"dweb:/ipfs/QmWDtpaAwqArG48wsdCEJ3HRdjAn2GEQ2hXXT3rawmgtkx"
+			]
+		},
+		"contracts/lib/SPGNFTLib.sol": {
+			"keccak256": "0x58244c20f6044b6fa80813cecd9b99767806a82a24867798cdd94b9ffd940030",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://813344e4be96eaf88ca00e1505a14c16db4dd3a9f567f357ff520203564cd4ac",
+				"dweb:/ipfs/QmcL6DoaCtK2qevQGtAe7Bf385b92qaYzLLKG4ySojdSuK"
+			]
+		},
+		"contracts/lib/WorkflowStructs.sol": {
+			"keccak256": "0xe0a0cdb64a86bf124464526c07a5331ba8903e9d2a07a2e5e0f923ef444822f7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://381b020153a1972a4aae350de95054c44e43fae75556b8b4eb4399b687c34cf1",
+				"dweb:/ipfs/QmaUQA5wGWmxWLeGjNSc6C1WL1SFNZKah3vM2Qdn2N8fNr"
+			]
+		},
+		"contracts/workflows/RegistrationWorkflows.sol": {
+			"keccak256": "0x38f1392c15a3356b7d6bc5c161f956d8283d039ca47994ad1b8e3424bfb36ddc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6726ba39f1d503a76c266d9ba9142a6be55a1e2306de754da03a4aa293472742",
+				"dweb:/ipfs/QmWzxRqiQjvQw2Ner72nFZ5sp1C33LoeT7Lavp66NJmPX6"
+			]
+		}
+	},
+	"version": 1
+}

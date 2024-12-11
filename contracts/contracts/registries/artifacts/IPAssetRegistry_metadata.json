@@ -1,0 +1,1935 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "erc6551Registry",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ipAccountImpl",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "groupingModule",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "authority",
+						"type": "address"
+					}
+				],
+				"name": "AccessManagedInvalidAuthority",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint32",
+						"name": "delay",
+						"type": "uint32"
+					}
+				],
+				"name": "AccessManagedRequiredDelay",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "AccessManagedUnauthorized",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					}
+				],
+				"name": "AddressEmptyCode",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "AddressInsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "ERC1967InvalidImplementation",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ERC1967NonPayable",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "EnforcedPause",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ExpectedPause",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FailedInnerCall",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "GroupIPAssetRegistry__CallerIsNotGroupingModule",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupPool",
+						"type": "address"
+					}
+				],
+				"name": "GroupIPAssetRegistry__GroupRewardPoolNotRegistered",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "rewardPool",
+						"type": "address"
+					}
+				],
+				"name": "GroupIPAssetRegistry__InvalidGroupRewardPool",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					}
+				],
+				"name": "GroupIPAssetRegistry__NotRegisteredGroupIP",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "ipId",
+						"type": "address"
+					}
+				],
+				"name": "GroupIPAssetRegistry__NotRegisteredIP",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "IPAccountRegistry_ZeroERC6551Registry",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "IPAccountRegistry_ZeroIpAccountImpl",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "IPAssetRegistry__InvalidToken",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					}
+				],
+				"name": "IPAssetRegistry__UnsupportedIERC721",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					}
+				],
+				"name": "IPAssetRegistry__UnsupportedIERC721Metadata",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "IPAssetRegistry__ZeroAccessManager",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "IPAssetRegistry__ZeroAddress",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidInitialization",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotInitializing",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "SafeERC20FailedOperation",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "StringsInsufficientHexLength",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UUPSUnauthorizedCallContext",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "slot",
+						"type": "bytes32"
+					}
+				],
+				"name": "UUPSUnsupportedProxiableUUID",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "authority",
+						"type": "address"
+					}
+				],
+				"name": "AuthorityUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "IPAccountRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "ipId",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "registrationDate",
+						"type": "uint256"
+					}
+				],
+				"name": "IPRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "payer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "treasury",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "feeToken",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint96",
+						"name": "amount",
+						"type": "uint96"
+					}
+				],
+				"name": "IPRegistrationFeePaid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "version",
+						"type": "uint64"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Paused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "treasury",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "feeToken",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint96",
+						"name": "feeAmount",
+						"type": "uint96"
+					}
+				],
+				"name": "RegistrationFeeSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Unpaused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "Upgraded",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "ERC6551_PUBLIC_REGISTRY",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "GROUPING_MODULE",
+				"outputs": [
+					{
+						"internalType": "contract IGroupingModule",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "IP_ACCOUNT_IMPL",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "IP_ACCOUNT_SALT",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "UPGRADE_INTERFACE_VERSION",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "accessManager",
+						"type": "address"
+					}
+				],
+				"name": "__ProtocolPausable_init",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "ipIds",
+						"type": "address[]"
+					}
+				],
+				"name": "addGroupMember",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "authority",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ipId",
+						"type": "address"
+					}
+				],
+				"name": "containsIp",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFeeAmount",
+				"outputs": [
+					{
+						"internalType": "uint96",
+						"name": "",
+						"type": "uint96"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFeeToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "size",
+						"type": "uint256"
+					}
+				],
+				"name": "getGroupMembers",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "results",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					}
+				],
+				"name": "getGroupRewardPool",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getIPAccountImpl",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTreasury",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "accessManager",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ipAccount",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ipId",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isConsumingScheduledOp",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "id",
+						"type": "address"
+					}
+				],
+				"name": "isRegistered",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					}
+				],
+				"name": "isRegisteredGroup",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "rewardPool",
+						"type": "address"
+					}
+				],
+				"name": "isWhitelistedGroupRewardPool",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isWhitelisted",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proxiableUUID",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "chainid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "register",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "id",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupNft",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "groupNftId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "rewardPool",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "registerFeePayer",
+						"type": "address"
+					}
+				],
+				"name": "registerGroup",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "ipIds",
+						"type": "address[]"
+					}
+				],
+				"name": "removeGroupMember",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newAuthority",
+						"type": "address"
+					}
+				],
+				"name": "setAuthority",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "treasury",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "feeToken",
+						"type": "address"
+					},
+					{
+						"internalType": "uint96",
+						"name": "feeAmount",
+						"type": "uint96"
+					}
+				],
+				"name": "setRegistrationFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "groupId",
+						"type": "address"
+					}
+				],
+				"name": "totalMembers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unpause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newImplementation",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "upgradeToAndCall",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "rewardPool",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "allowed",
+						"type": "bool"
+					}
+				],
+				"name": "whitelistGroupRewardPool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"AddressEmptyCode(address)": [
+					{
+						"details": "There's no code at `target` (it is not a contract)."
+					}
+				],
+				"AddressInsufficientBalance(address)": [
+					{
+						"details": "The ETH balance of the account is not enough to perform the operation."
+					}
+				],
+				"ERC1967InvalidImplementation(address)": [
+					{
+						"details": "The `implementation` of the proxy is invalid."
+					}
+				],
+				"ERC1967NonPayable()": [
+					{
+						"details": "An upgrade function sees `msg.value > 0` that may be lost."
+					}
+				],
+				"EnforcedPause()": [
+					{
+						"details": "The operation failed because the contract is paused."
+					}
+				],
+				"ExpectedPause()": [
+					{
+						"details": "The operation failed because the contract is not paused."
+					}
+				],
+				"FailedInnerCall()": [
+					{
+						"details": "A call to an address target failed. The target may have reverted."
+					}
+				],
+				"InvalidInitialization()": [
+					{
+						"details": "The contract is already initialized."
+					}
+				],
+				"NotInitializing()": [
+					{
+						"details": "The contract is not initializing."
+					}
+				],
+				"SafeERC20FailedOperation(address)": [
+					{
+						"details": "An operation with an ERC20 token failed."
+					}
+				],
+				"StringsInsufficientHexLength(uint256,uint256)": [
+					{
+						"details": "The `value` string doesn't fit in the specified `length`."
+					}
+				],
+				"UUPSUnauthorizedCallContext()": [
+					{
+						"details": "The call is from an unauthorized context."
+					}
+				],
+				"UUPSUnsupportedProxiableUUID(bytes32)": [
+					{
+						"details": "The storage `slot` is unsupported as a UUID."
+					}
+				]
+			},
+			"events": {
+				"AuthorityUpdated(address)": {
+					"details": "Authority that manages this contract was updated."
+				},
+				"IPAccountRegistered(address,address,uint256,address,uint256)": {
+					"params": {
+						"account": "The address of the new IP Account",
+						"chainId": "The chain ID where the token contract was deployed",
+						"implementation": "The address of the IP Account implementation",
+						"tokenContract": "The address of the token contract associated with the IP Account",
+						"tokenId": "The ID of the token associated with the IP Account"
+					}
+				},
+				"IPRegistered(address,uint256,address,uint256,string,string,uint256)": {
+					"params": {
+						"chainId": "The chain identifier of where the IP resides.",
+						"ipId": "The canonical identifier for the IP.",
+						"name": "The name of the IP.",
+						"registrationDate": "The date and time the IP was registered.",
+						"tokenContract": "The token contract address of the IP NFT.",
+						"tokenId": "The token identifier of the IP.",
+						"uri": "The URI of the IP."
+					}
+				},
+				"IPRegistrationFeePaid(address,address,address,uint96)": {
+					"params": {
+						"amount": "The amount of the fee paid.",
+						"feeToken": "The address of the token used to pay the fee.",
+						"payer": "The address of the account that paid the fee.",
+						"treasury": "The address of the treasury that received the fee."
+					}
+				},
+				"Initialized(uint64)": {
+					"details": "Triggered when the contract has been initialized or reinitialized."
+				},
+				"Paused(address)": {
+					"details": "Emitted when the pause is triggered by `account`."
+				},
+				"RegistrationFeeSet(address,address,uint96)": {
+					"params": {
+						"feeAmount": "The amount of the fee.",
+						"feeToken": "The address of the token used to pay the fee.",
+						"treasury": "The address of the treasury that will receive the fee."
+					}
+				},
+				"Unpaused(address)": {
+					"details": "Emitted when the pause is lifted by `account`."
+				},
+				"Upgraded(address)": {
+					"details": "Emitted when the implementation is upgraded."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"__ProtocolPausable_init(address)": {
+					"params": {
+						"accessManager": "The address of the access manager"
+					}
+				},
+				"addGroupMember(address,address[])": {
+					"params": {
+						"groupId": "The address of the Group IPA.",
+						"ipIds": "The addresses of the IPs to add to the Group IPA."
+					}
+				},
+				"authority()": {
+					"details": "Returns the current authority."
+				},
+				"constructor": {
+					"custom:oz-upgrades-unsafe-allow": "constructor"
+				},
+				"containsIp(address,address)": {
+					"params": {
+						"groupId": "The address of the Group IPA.",
+						"ipId": "The address of the IP."
+					},
+					"returns": {
+						"_0": "isMember Whether the IP is a member of the Group IPA."
+					}
+				},
+				"getFeeAmount()": {
+					"returns": {
+						"_0": "feeAmount The amount of the fee."
+					}
+				},
+				"getFeeToken()": {
+					"returns": {
+						"_0": "feeToken The address of the token used to pay the fee."
+					}
+				},
+				"getGroupMembers(address,uint256,uint256)": {
+					"params": {
+						"groupId": "The address of the Group IPA.",
+						"size": "The size of the group members to retrieve",
+						"startIndex": "The start index of the group members to retrieve"
+					},
+					"returns": {
+						"results": "The addresses of the group members"
+					}
+				},
+				"getGroupRewardPool(address)": {
+					"params": {
+						"groupId": "The address of the Group IPA."
+					},
+					"returns": {
+						"_0": "rewardPool The address of the group policy."
+					}
+				},
+				"getIPAccountImpl()": {
+					"returns": {
+						"_0": "The address of the IPAccount implementation"
+					}
+				},
+				"getTreasury()": {
+					"returns": {
+						"_0": "treasury The address of the treasury."
+					}
+				},
+				"initialize(address)": {
+					"params": {
+						"accessManager": "The address of the access manager."
+					}
+				},
+				"ipAccount(uint256,address,uint256)": {
+					"params": {
+						"chainId": "The chain ID where the IP Account is located",
+						"tokenContract": "The address of the token contract associated with the IP Account",
+						"tokenId": "The ID of the token associated with the IP Account"
+					},
+					"returns": {
+						"_0": "ipAccountAddress The address of the IP Account associated with the given NFT token"
+					}
+				},
+				"ipId(uint256,address,uint256)": {
+					"details": "This is equivalent to the address of its bound IP account.",
+					"params": {
+						"chainId": "The chain identifier of where the IP resides.",
+						"tokenContract": "The address of the IP.",
+						"tokenId": "The token identifier of the IP."
+					},
+					"returns": {
+						"_0": "ipId The IP's canonical address identifier."
+					}
+				},
+				"isConsumingScheduledOp()": {
+					"details": "Returns true only in the context of a delayed restricted call, at the moment that the scheduled operation is being consumed. Prevents denial of service for delayed restricted calls in the case that the contract performs attacker controlled calls."
+				},
+				"isRegistered(address)": {
+					"params": {
+						"id": "The canonical identifier for the IP."
+					},
+					"returns": {
+						"_0": "isRegistered Whether the IP was registered into the protocol."
+					}
+				},
+				"isRegisteredGroup(address)": {
+					"params": {
+						"groupId": "The address of the Group IPA."
+					},
+					"returns": {
+						"_0": "isRegistered Whether the Group IPA was registered into the protocol."
+					}
+				},
+				"isWhitelistedGroupRewardPool(address)": {
+					"params": {
+						"rewardPool": "The address of the group reward pool."
+					},
+					"returns": {
+						"isWhitelisted": "Whether the group reward pool is whitelisted."
+					}
+				},
+				"paused()": {
+					"details": "Returns true if the contract is paused, and false otherwise."
+				},
+				"proxiableUUID()": {
+					"details": "Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier."
+				},
+				"register(uint256,address,uint256)": {
+					"details": "The IP required metadata name and URI are derived from the NFT's metadata.",
+					"params": {
+						"chainid": "The chain identifier of where the IP NFT resides.",
+						"tokenContract": "The address of the NFT.",
+						"tokenId": "The token identifier of the NFT."
+					},
+					"returns": {
+						"id": "The address of the newly registered IP."
+					}
+				},
+				"registerGroup(address,uint256,address,address)": {
+					"params": {
+						"groupNft": "The address of the group IPA",
+						"groupNftId": "The id of the group IPA",
+						"registerFeePayer": "The address of the account that pays the registration fee",
+						"rewardPool": "The address of the group reward pool"
+					},
+					"returns": {
+						"groupId": "The address of the newly registered Group IPA."
+					}
+				},
+				"removeGroupMember(address,address[])": {
+					"params": {
+						"groupId": "The address of the Group IPA.",
+						"ipIds": "The addresses of the IPs to remove from the Group IPA."
+					}
+				},
+				"setAuthority(address)": {
+					"details": "Transfers control to a new authority. The caller must be the current authority."
+				},
+				"setRegistrationFee(address,address,uint96)": {
+					"params": {
+						"feeAmount": "The amount of the fee.",
+						"feeToken": "The address of the token used to pay the fee.",
+						"treasury": "The address of the treasury that will receive the fee."
+					}
+				},
+				"totalMembers(address)": {
+					"params": {
+						"groupId": "The address of the Group IPA."
+					},
+					"returns": {
+						"_0": "totalMembers The total number of members in the Group IPA."
+					}
+				},
+				"upgradeToAndCall(address,bytes)": {
+					"custom:oz-upgrades-unsafe-allow-reachable": "delegatecall",
+					"details": "Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+				},
+				"whitelistGroupRewardPool(address,bool)": {
+					"params": {
+						"allowed": "Whether the group reward pool is whitelisted",
+						"rewardPool": "The address of the group reward pool"
+					}
+				}
+			},
+			"title": "IP Asset Registry",
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"GroupIPAssetRegistry__CallerIsNotGroupingModule(address)": [
+					{
+						"notice": "The caller to Group IP Asset Registry is not the Grouping Module."
+					}
+				],
+				"GroupIPAssetRegistry__GroupRewardPoolNotRegistered(address)": [
+					{
+						"notice": "Group Pool is not registered."
+					}
+				],
+				"GroupIPAssetRegistry__InvalidGroupRewardPool(address)": [
+					{
+						"notice": "Zero address provided for Group Reward Pool."
+					}
+				],
+				"GroupIPAssetRegistry__NotRegisteredGroupIP(address)": [
+					{
+						"notice": "The give address is not a registered Group IP."
+					}
+				],
+				"GroupIPAssetRegistry__NotRegisteredIP(address)": [
+					{
+						"notice": "The give address is not a registered IPA."
+					}
+				],
+				"IPAccountRegistry_ZeroERC6551Registry()": [
+					{
+						"notice": "Zero address provided for ERC6551 Registry."
+					}
+				],
+				"IPAccountRegistry_ZeroIpAccountImpl()": [
+					{
+						"notice": "Zero address provided for IP Account implementation."
+					}
+				],
+				"IPAssetRegistry__InvalidToken(address,uint256)": [
+					{
+						"notice": "The NFT token id does not exist or invalid."
+					}
+				],
+				"IPAssetRegistry__UnsupportedIERC721(address)": [
+					{
+						"notice": "The NFT token contract is not valid ERC721 contract."
+					}
+				],
+				"IPAssetRegistry__UnsupportedIERC721Metadata(address)": [
+					{
+						"notice": "The NFT token contract does not support ERC721Metadata."
+					}
+				],
+				"IPAssetRegistry__ZeroAccessManager()": [
+					{
+						"notice": "Zero address provided for Access Manager in initializer."
+					}
+				],
+				"IPAssetRegistry__ZeroAddress(string)": [
+					{
+						"notice": "Zero address provided for IP Asset Registry."
+					}
+				]
+			},
+			"events": {
+				"IPAccountRegistered(address,address,uint256,address,uint256)": {
+					"notice": "Event emitted when a new IP Account is created"
+				},
+				"IPRegistered(address,uint256,address,uint256,string,string,uint256)": {
+					"notice": "Emits when an IP is officially registered into the protocol."
+				},
+				"IPRegistrationFeePaid(address,address,address,uint96)": {
+					"notice": "Emits when an IP registration fee is paid."
+				},
+				"RegistrationFeeSet(address,address,uint96)": {
+					"notice": "Emits when an IP registration fee is set."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"ERC6551_PUBLIC_REGISTRY()": {
+					"notice": "Returns the public ERC6551 registry address"
+				},
+				"IP_ACCOUNT_IMPL()": {
+					"notice": "Returns the IPAccount implementation address"
+				},
+				"IP_ACCOUNT_SALT()": {
+					"notice": "Returns the IPAccount salt"
+				},
+				"__ProtocolPausable_init(address)": {
+					"notice": "Initializes the ProtocolPausable contract"
+				},
+				"addGroupMember(address,address[])": {
+					"notice": "Adds a member to a Group IPA"
+				},
+				"containsIp(address,address)": {
+					"notice": "Checks whether an IP is a member of a Group IPA"
+				},
+				"getFeeAmount()": {
+					"notice": "Retrieves the registration fee amount for IP assets."
+				},
+				"getFeeToken()": {
+					"notice": "Retrieves the registration fee token for IP assets."
+				},
+				"getGroupMembers(address,uint256,uint256)": {
+					"notice": "Retrieves the group members for a Group IPA"
+				},
+				"getGroupRewardPool(address)": {
+					"notice": "Retrieves the group policy for a Group IPA"
+				},
+				"getIPAccountImpl()": {
+					"notice": "Returns the IPAccount implementation address."
+				},
+				"getTreasury()": {
+					"notice": "Retrieves the treasury address for IP assets."
+				},
+				"initialize(address)": {
+					"notice": "Initializes the IPAssetRegistry contract."
+				},
+				"ipAccount(uint256,address,uint256)": {
+					"notice": "Returns the IPAccount address for the given NFT token."
+				},
+				"ipId(uint256,address,uint256)": {
+					"notice": "Gets the canonical IP identifier associated with an IP NFT."
+				},
+				"isRegistered(address)": {
+					"notice": "Checks whether an IP was registered based on its ID."
+				},
+				"isRegisteredGroup(address)": {
+					"notice": "Checks whether a group IPA was registered based on its ID."
+				},
+				"isWhitelistedGroupRewardPool(address)": {
+					"notice": "Checks whether a group reward pool is whitelisted"
+				},
+				"pause()": {
+					"notice": "sets paused state"
+				},
+				"register(uint256,address,uint256)": {
+					"notice": "Registers an NFT as an IP asset and creates an IP account for it.         if the IP was already registered, return the IP address."
+				},
+				"registerGroup(address,uint256,address,address)": {
+					"notice": "Registers a Group IPA"
+				},
+				"removeGroupMember(address,address[])": {
+					"notice": "Removes a member from a Group IPA"
+				},
+				"setRegistrationFee(address,address,uint96)": {
+					"notice": "Sets the registration fee for IP assets."
+				},
+				"totalMembers(address)": {
+					"notice": "Retrieves the total number of members in a Group IPA"
+				},
+				"totalSupply()": {
+					"notice": "Gets the total number of IP assets registered in the protocol."
+				},
+				"unpause()": {
+					"notice": "unsets unpaused state"
+				},
+				"whitelistGroupRewardPool(address,bool)": {
+					"notice": "Whitelists a group reward pool"
+				}
+			},
+			"notice": "This contract acts as the source of truth for all IP registered in         Story Protocol. An IP is identified by its contract address, token         id, and coin type, meaning any NFT may be conceptualized as an IP.         Once an IP is registered into the protocol, a corresponding IP         asset is generated, which references an IP resolver for metadata         attribution and an IP account for protocol authorization.         IMPORTANT: The IP account address, besides being used for protocol                    auth, is also the canonical IP identifier for the IP NFT.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/contracts/registries/IPAssetRegistry.sol": "IPAssetRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": [
+			":@storyprotocol/core/=/contracts/contracts/",
+			":@storyprotocol/periphery/=/contracts/",
+			":forge-std/=lib/forge-std/src/"
+		]
+	},
+	"sources": {
+		"@openzeppelin/contracts-upgradeable/access/manager/AccessManagedUpgradeable.sol": {
+			"keccak256": "0xd7e800ed57cb2dc4ce3d38fc310cf6c4918c0a67f9071ef8fb3e0cff24be6446",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f85f4baeccce8f93fdc5d4ce54178c900d29f67e3109fe1b31b9d98e3f0a454",
+				"dweb:/ipfs/QmWfRZZzkBi3Eo4ub9VRLkBx8w527Qs5ceTNLQ9unx9n7g"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x631188737069917d2f909d29ce62c4d48611d326686ba6683e26b72a23bfac0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7a61054ae84cd6c4d04c0c4450ba1d6de41e27e0a2c4f1bcdf58f796b401c609",
+				"dweb:/ipfs/QmUvtdp7X1mRVyC3CsHrtPbgoqWaXHp3S1ZR24tpAQYJWM"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol": {
+			"keccak256": "0x3f13b947637c4969c0644cab4ef399cdc4b67f101463b8775c5a43b118558e53",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c6683e6ade6985d394d32baaef5eea0d8b9ff0b3eca86ae413d6cdde114a9930",
+				"dweb:/ipfs/QmdBE8T1BTddZxpdECMsb3KiCFyjNWmxcCddYrWFTXmWPj"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0xdbef5f0c787055227243a7318ef74c8a5a1108ca3a07f2b3a00ef67769e1e397",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://08e39f23d5b4692f9a40803e53a8156b72b4c1f9902a88cd65ba964db103dab9",
+				"dweb:/ipfs/QmPKn6EYDgpga7KtpkA8wV2yJCYGMtc9K4LkJfhKX2RVSV"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol": {
+			"keccak256": "0x92915b7f7f642c6be3f65bfd1522feb5d5b6ef25f755f4dbb51df32c868f2f97",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://85ad36d5cc7e190e1ee6c94b24659bc3a31396c4c36b6ffa6a509e10661f8007",
+				"dweb:/ipfs/QmPFyc4zMh2zo6YWZt25gjm3YdR2hg6wGETaWw256fMmJJ"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/AuthorityUtils.sol": {
+			"keccak256": "0xb3875997b0d8705e29aa20fee88e1dfef93df438794ae1ad8ba2eb016a4dd4e4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f9e50192f7c7a22829cacfbd14221c3a3d869da64a2333f330d527777f275d9e",
+				"dweb:/ipfs/QmaxMQb26ggDmW3SDwJ8y6hRC8dbWbLMpUZBVzZtXqzycJ"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/IAccessManaged.sol": {
+			"keccak256": "0xaba93d42cd70e1418782951132d97b31ddce5f50ad81090884b6d0e41caac9d6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b110886f83e3e98a11255a3b56790322e8d83e513304dde71299406685fc6694",
+				"dweb:/ipfs/QmPwroS7MUUk1EmsvaJqU6aarhQ8ewJtJMg7xxmTsaxZEv"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/IAccessManager.sol": {
+			"keccak256": "0xdabf85e3bab52e7cfade4f77e661bcf7a2f9f95097bfd2ca5ddb193a0c21ee8b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://402259332090488a587a858ec0113bc7fe55e9dbc6e329927b87ed0f1cce7d08",
+				"dweb:/ipfs/QmPJufTJJJifny3JscKTASsPzCrpXRbhtsJnwkCdbaKDTf"
+			]
+		},
+		"@openzeppelin/contracts/access/manager/IAuthority.sol": {
+			"keccak256": "0x4cc0766bd7fb7b3bafb70afa2a93b6e313a0baec7a35ad1b57505be7861c1030",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://85871c47ac00d10664b858ef71ecd8b9787c1d313e544ab2c57210c520a3c06c",
+				"dweb:/ipfs/QmUMTwojLzURuHftQLzAVuDmib9roj4KwcHCkg3LhZ2AdH"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/draft-IERC1822.sol": {
+			"keccak256": "0x2a1f9944df2015c081d89cd41ba22ffaf10aa6285969f0dc612b235cc448999c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef381843676aec64421200ee85eaa0b1356a35f28b9fc67e746a6bbb832077d9",
+				"dweb:/ipfs/QmY8aorMYA2TeTCnu6ejDjzb4rW4t7TCtW4GZ6LoxTFm7v"
+			]
+		},
+		"@openzeppelin/contracts/proxy/ERC1967/ERC1967Utils.sol": {
+			"keccak256": "0x06a78f9b3ee3e6d0eb4e4cd635ba49960bea34cac1db8c0a27c75f2319f1fd65",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://547d21aa17f4f3f1a1a7edf7167beff8dd9496a0348d5588f15cc8a4b29d052a",
+				"dweb:/ipfs/QmT16JtRQSWNpLo9W23jr6CzaMuTAcQcjJJcdRd8HLJ6cE"
+			]
+		},
+		"@openzeppelin/contracts/proxy/beacon/IBeacon.sol": {
+			"keccak256": "0xc59a78b07b44b2cf2e8ab4175fca91e8eca1eee2df7357b8d2a8833e5ea1f64c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5aa4f07e65444784c29cd7bfcc2341b34381e4e5b5da9f0c5bd00d7f430e66fa",
+				"dweb:/ipfs/QmWRMh4Q9DpaU9GvsiXmDdoNYMyyece9if7hnfLz7uqzWM"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+			"keccak256": "0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d",
+				"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0",
+				"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x5ef46daa3b58ef2702279d514780316efaa952915ee1aa3396f041ee2982b0b4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f8f2a76e23b02fc69e8cd24c3cb47da6c7af3a2d6c3a382f8ac25c6e094ade7",
+				"dweb:/ipfs/QmPV4ZS4tPVv4mTCf9ejyZ1ai57EEibDRj7mN2ARDCLV5n"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+			"keccak256": "0x37d1aaaa5a2908a09e9dcf56a26ddf762ecf295afb5964695937344fc6802ce1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ed0bfc1b92153c5000e50f4021367b931bbe96372ac6facec3c4961b72053d02",
+				"dweb:/ipfs/Qmbwp8VDerjS5SV1quwHH1oMXxPQ93fzfLVqJ2RCqbowGE"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245",
+				"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y"
+			]
+		},
+		"@openzeppelin/contracts/utils/ShortStrings.sol": {
+			"keccak256": "0x18a7171df639a934592915a520ecb97c5bbc9675a1105607aac8a94e72bf62c6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7478e1f13da69a2867ccd883001d836b75620362e743f196376d63ed0c422a1c",
+				"dweb:/ipfs/QmWywcQ9TNfwtoqAxbn25d8C5VrV12PrPS9UjtGe6pL2BA"
+			]
+		},
+		"@openzeppelin/contracts/utils/StorageSlot.sol": {
+			"keccak256": "0x32ba59b4b7299237c8ba56319110989d7978a039faf754793064e967e5894418",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1ae50c8b562427df610cc4540c9bf104acca7ef8e2dcae567ae7e52272281e9c",
+				"dweb:/ipfs/QmTHiadFCSJUPpRjNegc5SahmeU8bAoY8i9Aq6tVscbcKR"
+			]
+		},
+		"@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0x55f102ea785d8399c0e58d1108e2d289506dde18abc6db1b7f68c1f9f9bc5792",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e52e0a7765c943ef14e5bcf11e46e6139fa044be564881378349236bf2e3453",
+				"dweb:/ipfs/QmZEeeXoFPW47amyP35gfzomF9DixqqTEPwzBakv6cZw6i"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x9e8778b14317ba9e256c30a76fd6c32b960af621987f56069e1e819c77c6a133",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1777404f1dcd0fac188e55a288724ec3c67b45288e49cc64723e95e702b49ab8",
+				"dweb:/ipfs/QmZFdC626GButBApwDUvvTnUzdinevC3B24d7yyh57XkiA"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165Checker.sol": {
+			"keccak256": "0xac3d50e321a48a40b4496970ce725900f13aeb2255b7c1203f5adbe98c4a911a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1d7b235b578347dce2d831a76f122e820a7db7e73fd2e47f13bafdcd61c5b066",
+				"dweb:/ipfs/QmVAELwambfJa55HfiCoz1kFFh7iYwRYeW5x8si6AFM4iX"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df",
+				"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0x005ec64c6313f0555d59e278f9a7a5ab2db5bdc72a027f255a37c327af1ec02d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4ece9f0b9c8daca08c76b6b5405a6446b6f73b3a15fab7ff56e296cbd4a2c875",
+				"dweb:/ipfs/QmQyRpyPRL5SQuAgj6SHmbir3foX65FJjbVTTQrA2EFg6L"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeCast.sol": {
+			"keccak256": "0xe19a4d5f31d2861e7344e8e535e2feafb913d806d3e2b5fe7782741a2a7094fe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4aed79c0fa6f0546ed02f2f683e8f77f0fd2ed7eb34d8bbf3d373c9a6d95b13c",
+				"dweb:/ipfs/QmWqVz6UAVqmnWU5pqYPt1o6iDEZyPaBraAA3rKfTTSfYj"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SignedMath.sol": {
+			"keccak256": "0x5f7e4076e175393767754387c962926577f1660dd9b810187b9002407656be72",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7d533a1c97cd43a57cd9c465f7ee8dd0e39ae93a8fb8ff8e5303a356b081cdcc",
+				"dweb:/ipfs/QmVBEei6aTnvYNZp2CHYVNKyZS4q1KkjANfY39WVXZXVoT"
+			]
+		},
+		"@openzeppelin/contracts/utils/structs/EnumerableSet.sol": {
+			"keccak256": "0x86c1470cbfd878491e5de030072b647352d36bd27122cffb928970b1945282aa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad85dd393ee0a1917c57046abc5155f51f77844b2c6a42c05c1b8dd26d6ff3c1",
+				"dweb:/ipfs/QmNqYc8To2NdnpP6E1tGz7t6A7beuENde5yovwov5pW1fA"
+			]
+		},
+		"@openzeppelin/contracts/utils/types/Time.sol": {
+			"keccak256": "0xc7755af115020049e4140f224f9ee88d7e1799ffb0646f37bf0df24bf6213f58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7f09bf94d5274334ec021f61a04659db303f31e60460e14b709c9bf187740111",
+				"dweb:/ipfs/QmNvgomZYUwFAt4cZbPWAiTeSZQreGehY9BK5xyVJsUttb"
+			]
+		},
+		"contracts/contracts/interfaces/IIPAccount.sol": {
+			"keccak256": "0x792db72e22e20af2122b5d6915d7e2d1b58901626469be2ad9eff822ea1f7853",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://ba24de53704ffb85e412d91b507d37d1613c5d558d964b15159e3c370fffa368",
+				"dweb:/ipfs/QmXnDrroZpbnspYrLszvtGSAGcTQ7FoiryBTCQuSv8NuQ5"
+			]
+		},
+		"contracts/contracts/interfaces/IIPAccountStorage.sol": {
+			"keccak256": "0x660f3c2741daddb8afaa681816f637521acb02432dd71aa26b64380a3a2183f0",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://fc0554d596b99ddb3124157db5bde166859238dfc1407c12602f7ed59ce04d7a",
+				"dweb:/ipfs/QmPFCSfGvD2dRA72qfpYYV8xyPwwNteSuijSJv5tVFHuFe"
+			]
+		},
+		"contracts/contracts/interfaces/modules/base/IModule.sol": {
+			"keccak256": "0xe6b5a6812eeaf90aab7c016aaa8d3efdccedc95059badc40cca5eb23f0f16c50",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://ddb19461c0a36090307660badc772eaf6d3cfbad44d82b6bd47d810aaaf4c12c",
+				"dweb:/ipfs/QmeTeb8xya718vYAQA8Cb5zRRMzGuLbT5HVP95sv34bMkE"
+			]
+		},
+		"contracts/contracts/interfaces/modules/grouping/IGroupingModule.sol": {
+			"keccak256": "0x33a4031ed4e315060bed816f33c3e233947fbcf86d7166da56fd415d05fd0417",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://f8874cbea683154132dbbf289123e61e91919f2745fb45b26915ebc6a7e43777",
+				"dweb:/ipfs/QmdfsioNiDomw6YxRozEMjUYdtTFa2xjQZrbh34xBnoCpH"
+			]
+		},
+		"contracts/contracts/interfaces/registries/IGroupIPAssetRegistry.sol": {
+			"keccak256": "0x5ecda266e91ee30df9adbb62ec5cfb20d562fb68af3ac99bcfa68dbdf2bf69c2",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://0297192e8d7900208e881bdfce2aa6026f07f2c3c63a290a0dba7a78d3a0dd6d",
+				"dweb:/ipfs/QmSoNVeySk2QQ2Qx5oENPP9wd99CEGgTwaCdppJPt9pZei"
+			]
+		},
+		"contracts/contracts/interfaces/registries/IIPAccountRegistry.sol": {
+			"keccak256": "0x95195a5f64a82cd8c9e72477edb6e5f2e2c51ccece6d56d68d48f09a7b861d6a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://2be79d745f02f73379997d437b790d858ea29c97102ffcd5ee7f10b6d42b67a2",
+				"dweb:/ipfs/QmYR5EbYNDkdkoECSg963Cat9eYoh5Ed7jemZoevbfRoXW"
+			]
+		},
+		"contracts/contracts/interfaces/registries/IIPAssetRegistry.sol": {
+			"keccak256": "0xd7b55fdbe0ab5240687a2abd333cd5f738ee1870733d30f4f4b9a30bf6dfd1d1",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://017d941f8137f32a1ccc1bbaf70e132f4a683df6d8f316cc0fae7deed729a798",
+				"dweb:/ipfs/QmP2uKkBnDxbtgXVyYY7jUqxhGf7dJS3S4X86VBBuShE9g"
+			]
+		},
+		"contracts/contracts/lib/Errors.sol": {
+			"keccak256": "0x0a4db13cd92c1edb3d8241aa9aad3e9855e0f5785df238cccf64d9c0fc3a1d9a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://753b74cb04b2b2941e2db56683e4b0c8de50f4752e7b6714d45a3412a141be63",
+				"dweb:/ipfs/QmZhaKnhB15Jq43p6VHd5LXUTwkoqVYve35eEF4bnmnYNY"
+			]
+		},
+		"contracts/contracts/lib/IPAccountStorageOps.sol": {
+			"keccak256": "0x11542114c053332c2d47f724cc93f3a7591c3b1e936b62c3619148acbe1b1d42",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://fb2471c425c7dab1d79413a1e3420b7f32af40f014ddd13a99eec9f08edf0373",
+				"dweb:/ipfs/QmU2FnLyzVMXKvu7jkEAkkr8exvchXkgZkvPZavNnrH5iL"
+			]
+		},
+		"contracts/contracts/pause/ProtocolPausableUpgradeable.sol": {
+			"keccak256": "0x60dbfd561b46b0103aebdf956a144f076b27aed83ca600a55913bc919a0501e8",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://783a26ae96d620271ad75eaa8466b78912cbdd88317733aa6e9e0f12c75e8d30",
+				"dweb:/ipfs/QmRhrCFueN5dUCDiEXGeHLFYbwdhZUtYWeZvEWjPYNEufZ"
+			]
+		},
+		"contracts/contracts/registries/GroupIPAssetRegistry.sol": {
+			"keccak256": "0x96152e9c9dac9cfb40f6890548bb5d824a902a22eab8cc7a4e5dce3691f19bc1",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://61347984277dc798e3ab7177caf617d689614469d6fe1a00f1a5daefcdc2daa5",
+				"dweb:/ipfs/QmeNgZR5ubJxTPo2oewqU8PwLv1KikaXX44V8sKsBgKX9V"
+			]
+		},
+		"contracts/contracts/registries/IPAccountRegistry.sol": {
+			"keccak256": "0xd6a08fa0ad741a1cd1160d50ebc7abaddaf4c9e22038330ed408202a20311b5a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://b1fd8bc0eed35296f50af22d0759efe8353b23b2f11c31ab2f305f4a2381c8c2",
+				"dweb:/ipfs/QmT8fhKw7KAsWb6a6Kw6nQxKSgGrWUKTWccPqSUy2Lvewf"
+			]
+		},
+		"contracts/contracts/registries/IPAssetRegistry.sol": {
+			"keccak256": "0x7406b1c1349983d681d3e7949dc03c68971fe95fe5303bb94f1d5cf413cb84e1",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://89ba2ba9c3c8d729217924ea0eaac84aba7a47ff8cf2241f32ca910e9ad591fe",
+				"dweb:/ipfs/QmQJmHLGhFA3WeD2cKuJrarAQ2SEYk6nu5FPzpkRuJpsek"
+			]
+		},
+		"erc6551/interfaces/IERC6551Registry.sol": {
+			"keccak256": "0x871be5b51883d915c0b871cb0baf7bbddd41a2b2e42ae109b922c6418ee7141b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9ce9d28f791e48ff909593ca1d4a20adb6b39b037b80ce6984fe971d90dbe802",
+				"dweb:/ipfs/QmPortC41pjKq1CgWTU6nSsBc5CHLyYKFFRu1opEWMj2UR"
+			]
+		}
+	},
+	"version": 1
+}
