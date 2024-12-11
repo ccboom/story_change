@@ -18,7 +18,9 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract SimpleNFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable, Ownable {
     uint256 public _nextTokenId;
-    string public baseURI = "https://jade-labour-hawk-866.mypinata.cloud/ipfs/QmUpS6ZvPUWPrKqiNJNomHLrAi2Rqa25xmo3Et8gjyoT21"; // 這一行是 NFT 該去哪裡找你的 MetaData
+
+    //这里写入你的NFT metadata文件的地址
+    string public baseURI = "https://jade-labour-hawk-866.mypinata.cloud/ipfs/QmUpS6ZvPUWPrKqiNJNomHLrAi2Rqa25xmo3Et8gjyoT21";
 
     constructor(string memory name, string memory symbol) ERC721(name, symbol) Ownable(msg.sender) {}
 
@@ -81,10 +83,14 @@ contract SimpleNFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable
 
 
 contract IPARegistrarTest is Test {
-    //输入你的地址
-    address public user = address(0x4a7Ea0a1190f25E14E5934fA92b9847f58b1b94f);
+    //输入你的地址在      address（这里输入） 不需要引号
+    address public user = address();
 
-    // 在这个网站查看已经部署的接口 https://docs.story.foundation/docs/deployed-smart-contracts
+    //这里输入你的NFT名字和缩写，在两个引号之间，删除内容填入自己的内容
+    string public test_nft_name = "WEEWQEWQ";
+    string public test_nft_sym = "DSADWDWA";
+
+    // 在这个网站查看已经部署的合约接口 https://docs.story.foundation/docs/deployed-smart-contracts
     // Protocol Core - IPAssetRegistry
     IPAssetRegistry public immutable IP_ASSET_REGISTRY = IPAssetRegistry(0x28E59E91C0467e89fd0f0438D47Ca839cDfEc095);
     // Protocol Periphery - RegistrationWorkflows
@@ -93,8 +99,7 @@ contract IPARegistrarTest is Test {
     SimpleNFT public SIMPLE_NFT;
     ISPGNFT public SPG_NFT;
 
-    string public test_nft_name = "ccboomer";
-    string public test_nft_sym = "CBM";
+
 
     function setUp() public {
         // Create a new Simple NFT collection
