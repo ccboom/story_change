@@ -1,0 +1,19 @@
+{
+    "attributes": [
+        {
+            "trait_type": "eye",
+            "value": "blue"
+        },
+        {
+            "trait_type": "body",
+            "value": "thin"
+        },
+        {
+            "trait_type": "IP",
+            "value": "OG"
+        }
+    ],
+    "description": "A danao",
+    "image": "https://jade-labour-hawk-866.mypinata.cloud/ipfs/Qme5ReS1yBH2MWLXq9Zkt7Hej1jpGf7z3kQahoh497m17a",
+    "name": "danao"
+}
